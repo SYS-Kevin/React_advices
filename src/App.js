@@ -17,13 +17,21 @@ export default function App() {
     getData();
   }, []);
 
+  //getData();
+
   return (
     <div>
       <h1>{data}</h1>
       <button onClick={getData}>Get news Here</button>
-      <p>
-        You have read <strong>{count}</strong> pieces news.
-      </p>
+      <Message count={count} />
     </div>
+  );
+}
+
+function Message(props) {
+  return (
+    <p>
+      You have read <strong>{props.count}</strong> pieces news.
+    </p>
   );
 }
